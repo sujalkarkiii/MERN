@@ -12,11 +12,14 @@ const app=express();
 dotenv.config();
 const port= process.env.PORT;
 
-app.use(cors());
 app.use(cookieparser());
 app.use(express.json());
+app.use(cors({
+    origin:"http://localhost:5173",
+    credentials:true
+}));
 
-app.use("/",Routing);
+app.use("/api",Routing);
 
 connectdb().then(()=>{
     console.log("Connecting....")
