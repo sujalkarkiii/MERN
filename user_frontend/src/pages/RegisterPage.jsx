@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { handleregister } from "../configuration/Api";
+import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
   const [username, setUsername] = useState("");
   const [useremail, setUseremail] = useState("");
   const [userpassword, setUserpassword] = useState("");
+const navigate= useNavigate();
 
 
 
@@ -16,6 +18,7 @@ const RegisterPage = () => {
         username:username,
         password:userpassword};
        handleregister(responses);
+       navigate('/')
     }
     catch(error)
     {
