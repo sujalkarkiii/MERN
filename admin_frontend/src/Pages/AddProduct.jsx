@@ -47,7 +47,6 @@ const AddProduct = () => {
               <input type="file"
                 name="image"
                 accept="image/*"
-                files={image}
                 onChange={(e) => setimage(e.target.files[0])} />
             </div>
     <button type="submit">submit</button>
